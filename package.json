@@ -1,0 +1,29 @@
+{
+  "name": "computersdb",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "npx playwright test --headed",
+    "test:create": "npx playwright test create.spec.ts --project=chromium --headed",
+    "test:read": "npx playwright test read.spec.ts --project=chromium --headed",
+    "test:update": "npx playwright test update.spec.ts --project=chromium --headed",
+    "test:delete": "npx playwright test delete.spec.ts --project=chromium --headed"
+  },
+  "keywords": [
+    "playwright",
+    "typescript"
+  ],
+  "author": "@justthieenj",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.27.1",
+    "@typescript-eslint/eslint-plugin": "^5.42.1",
+    "@typescript-eslint/parser": "^5.42.1",
+    "eslint": "^8.27.0",
+    "eslint-plugin-playwright": "^0.11.2"
+  },
+  "prettier": {
+    "trailingComma": "all",
+    "printWidth": 150
+  }
+}
