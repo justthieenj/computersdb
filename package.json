@@ -7,7 +7,9 @@
     "test:create": "npx playwright test create.spec.ts --project=chromium --headed",
     "test:read": "npx playwright test read.spec.ts --project=chromium --headed",
     "test:update": "npx playwright test update.spec.ts --project=chromium --headed",
-    "test:delete": "npx playwright test delete.spec.ts --project=chromium --headed"
+    "test:delete": "npx playwright test delete.spec.ts --project=chromium --headed",
+    "test:e2e": "npx playwright test e2e.spec.ts --project=chromium --headed",
+    "report": "npx playwright show-report"
   },
   "keywords": [
     "playwright",

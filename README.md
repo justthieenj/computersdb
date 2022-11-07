@@ -19,7 +19,10 @@
     - `npm run test:read`
     - `npm run test:update`
     - `npm run test:delete`
+    - `npm run test:e2e`
 
 ## View report
 
 To open last report run: `npx playwright show-report`
+
+- or run npm script: `npm run report`
