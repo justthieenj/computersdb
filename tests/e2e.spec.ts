@@ -1,6 +1,7 @@
 import { test } from "@playwright/test";
 import { AddNewPage, EditPage, HomePage } from "../pages";
 import { URL } from "../utils/constants";
+import { getGenericData } from "../utils/read-excel";
 import { getEpoch } from "../utils/utils";
 
 test("User can create, view, update and then delete a new computer", async ({ page }) => {
@@ -13,12 +14,7 @@ test("User can create, view, update and then delete a new computer", async ({ pa
     await homePage.clickAddNew();
   });
 
-  const computerInfo = {
-    name: `AutoTest-${getEpoch()}`,
-    introducedDate: "2021-01-01",
-    discontinuedDate: "2021-01-02",
-    company: "Apple Inc.",
-  };
+  const computerInfo = getGenericData()
   const addNewPage = new AddNewPage(page);
   await test.step("Fill data info for the new computer and click Create", async () => {
     await addNewPage.addComputer(computerInfo);
@@ -28,7 +24,7 @@ test("User can create, view, update and then delete a new computer", async ({ pa
     await homePage.verifyComputerCreated(computerInfo.name);
   });
 
-  let tableRowData = { name: "", introducedDate: "", discontinuedDate: "", company: "" };
+  let tableRowData;
   await test.step("Find and select the created computer to view", async () => {
     await homePage.findComputer(computerInfo.name);
     tableRowData = await homePage.getRowData();
